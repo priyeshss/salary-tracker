@@ -34,3 +34,5 @@ app.use('/api/dashboard', dashboardRoutes);
 
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/user', userRoutes);
+
+app.use('/api/expenses', require('./routes/expenseRoutes'));
