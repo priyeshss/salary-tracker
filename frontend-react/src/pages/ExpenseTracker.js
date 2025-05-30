@@ -24,13 +24,14 @@ function ExpenseTracker() {
 
   return (
     
-    <Layout>
-    <div style={{ maxWidth: '600px', margin: 'auto', padding: '2rem' }}>
-      <h2>Expense Tracker</h2>
-      <ExpenseForm onExpenseAdded={fetchExpenses} />
-      <ExpenseList expenses={expenses} />
-    </div>
-    </Layout>
+<Layout>
+  <div style={{ maxWidth: '600px', marginLeft: 0, marginRight: 'auto', padding: '2rem' }}>
+    <h2>Expense Tracker</h2>
+    <ExpenseForm onExpenseAdded={fetchExpenses} />
+    <ExpenseList expenses={expenses} />
+  </div>
+</Layout>
+
   );
 }
 

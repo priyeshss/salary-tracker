@@ -1,9 +1,7 @@
-// src\components\Register.js 
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import API from '../api';
-import { Link } from 'react-router-dom'; 
-
+import AuthLayout from './AuthLayout';
 
 function Register() {
   const [name, setName] = useState('');
@@ -23,8 +21,8 @@ function Register() {
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: 'auto', marginTop: 100 }}>
-      <h2>Register</h2>
+    <AuthLayout>
+      <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Register</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -32,30 +30,44 @@ function Register() {
           required
           value={name}
           onChange={e => setName(e.target.value)}
-        /><br /><br />
-
+          style={{ width: '100%', padding: '10px', marginBottom: '15px', borderRadius: '4px', border: '1px solid #ccc' }}
+        />
         <input
           type="email"
           placeholder="Email"
           required
           value={email}
           onChange={e => setEmail(e.target.value)}
-        /><br /><br />
-
+          style={{ width: '100%', padding: '10px', marginBottom: '15px', borderRadius: '4px', border: '1px solid #ccc' }}
+        />
         <input
           type="password"
           placeholder="Password"
           required
           value={password}
           onChange={e => setPassword(e.target.value)}
-        /><br /><br />
-
-        <button type="submit">Register</button>
+          style={{ width: '100%', padding: '10px', marginBottom: '25px', borderRadius: '4px', border: '1px solid #ccc' }}
+        />
+        <button
+          type="submit"
+          style={{
+            width: '100%',
+            padding: '10px',
+            backgroundColor: '#28a745',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontSize: '16px',
+          }}
+        >
+          Register
+        </button>
       </form>
-      <p>
+      <p style={{ textAlign: 'center', marginTop: '20px' }}>
         Already have an account? <Link to="/">Login here</Link>
       </p>
-    </div>
+    </AuthLayout>
   );
 }
 
